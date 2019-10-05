@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-export default function TodoForm({ addTodo }) {
+export default function TodoForm({ category, addTodo  }) {
     const [ value,  setValue ] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault()
         if (!value) return;
-        addTodo(value);
+        addTodo({text: value, 
+                        category_id: category});
         setValue('');
     }
 
