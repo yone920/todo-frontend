@@ -11,7 +11,7 @@ const [hasError, setErrors] = useState(false);
 const [ todos, setTodos ] = useState([]);
 
 useEffect(() => {
-      fetch("http://localhost:3000/categories")
+      fetch("https://todo-yone-backend.herokuapp.com/categories")
         .then( res =>  res.json())
         .then(data => {
             setTodos(data)
@@ -29,7 +29,7 @@ const addCategory = name => {
       },
       body: JSON.stringify(name)
     }
-    fetch("http://localhost:3000/categories", config)
+    fetch("https://todo-yone-backend.herokuapp.com/categories", config)
       .then(rsp => rsp.json())
       .then(data => {
         
@@ -46,7 +46,7 @@ const addTodo = data => {
     },
     body: JSON.stringify(data)
   }
-  fetch("http://localhost:3000/todos", config)
+  fetch("https://todo-yone-backend.herokuapp.com/todos", config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -62,7 +62,7 @@ const deleteTodo = todo => {
     }
   }
 
-  fetch(`http://localhost:3000/todos/${todo}`, config)
+  fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -78,7 +78,7 @@ const deleteCategory = category => {
     }
   }
 
-  fetch(`http://localhost:3000/categories/${category}`, config)
+  fetch(`https://todo-yone-backend.herokuapp.com/categories/${category}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
