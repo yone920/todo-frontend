@@ -1,16 +1,16 @@
 import React from 'react'
-import TodoForm from './TodoForm'
 
-export default function Todo({todo, index, addTodo}) {
+export default function Todo({singleTodo, deleteTodo}) {
+
+    const handleClick = e => {
+        deleteTodo(singleTodo.id)
+    }
+
+    
     return (
-        <div>
-            <h4>{todo.name}</h4>
-            { todo.todos.map(todo => {
-               return <p>{todo.text}</p>
-            }) }
-            <div>
-                <TodoForm category={todo.id}  addTodo={addTodo}/>
-            </div>
+        <div className="single-todo">
+            <div className="single-todo-name" ><p>{singleTodo.text}</p></div>
+            <div className="single-todo-delete-button" onClick={handleClick}><button>x</button></div>
         </div>
     )
 }
