@@ -1,0 +1,42 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, .4);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible
+    }
+
+    &__close {
+        .icon {
+            @include svg-icons($black);
+        }
+    }
+
+    &__content {
+        @include absCenter;
+        width: 50%;
+        height: 30rem;
+        background-color: $white;
+        box-shadow: 0 2rem 4rem rgba($black, .2);
+
+        display: grid;
+        grid-template-column: 1fr repeat(2, minmax(4rem, min-content)) 1fr;
+
+    }
+
+    &__create-category-box {
+        grid-column: col-start 3 / col-end 6;
+        align-self: center;
+        justify-self: center;
+        // display: none;
+    }
+}

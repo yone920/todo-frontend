@@ -1,0 +1,50 @@
+.header {
+    background-color: lighten( $black, 20% );
+    grid-column: full-start / full-end;
+    color: $white;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    &__logo-menu-wrapper {
+        grid-column: 2 / span 2;
+        width: 75%;
+        margin: 0 auto;
+        
+
+    }
+
+    &__logo-box {
+        grid-column: 2 / span 2;
+        justify-self: left;
+        display: flex;
+        flex-direction: column
+    }
+
+    &__logo-span {
+        font-size: 2.3rem;
+        text-transform: uppercase;
+    }
+
+    &__sub-span {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: -6px;
+    }
+
+    &__menu {
+        grid-column: 5 / span 3;
+        justify-self: right;
+        align-self: center;
+        // transform: translateY(-130px);
+        // transform: translateX(-30px);
+    
+        span {
+            padding-left: 20px;
+        }
+    }
+}
+

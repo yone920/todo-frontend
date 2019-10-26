@@ -14,7 +14,7 @@ export default function TodoCategoryForm({ addCategory }) {
 
 
     return (
-        <div>
+        <div className="category-form">
             <form onSubmit={handleSubmit}>
                 <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Category..."></input>
                 <input type="submit"></input>

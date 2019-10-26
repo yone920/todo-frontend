@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 
 export default function TodoForm({ category, addTodo  }) {
     const [ value,  setValue ] = useState('');
@@ -14,10 +14,10 @@ export default function TodoForm({ category, addTodo  }) {
     
 
     return (
-        <div>
+        <Fragment>
             <form onSubmit={handleSubmit}>
                 <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Todo..."></input>
             </form>
-        </div>
+        </Fragment>
     )
 }

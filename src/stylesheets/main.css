@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: "Lato";
+  font-weight: 400;
+  line-height: 1.7;
+  color: #000;
+}
+
+.categories {
+  grid-column: center-start / center-end;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 5rem;
+}
+
+.category {
+  border: 1px solid #000;
+  border-radius: 3%;
+  padding: 2rem;
+}
+
+.category__header {
+  background-color: #E75B10;
+}
+
+.header {
+  background-color: purple;
+  grid-column: full-start / full-end;
+}
+
+.header__logo-menu-wrapper {
+  grid-column: center-start / center-end;
+  width: 75%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer#footer {
+  grid-column: full-start / full-end;
+}
+
+.home {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [full-start] minmax(4rem, 1fr) [center-start] ([col-start] minmax(min-content, 13rem) [col-end])[8] [center-end] minmax(4rem, 1fr) [full-end];
+      grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(-webkit-min-content, 13rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+      grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 13rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+  -ms-grid-rows: 8vh 14vh min-content 5vh;
+      grid-template-rows: 8vh 14vh -webkit-min-content 5vh;
+      grid-template-rows: 8vh 14vh min-content 5vh;
+}
+
+.home__create-category-box {
+  background-color: pink;
+  grid-column: col-start 3 / col-end 6;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+/*# sourceMappingURL=main.css.map */

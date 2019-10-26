@@ -1,0 +1,16 @@
+@mixin svg-icons($color) {
+        display:inline-block;
+        fill: $color;
+        margin-top: -0.2em;
+        width: 1.3em;
+        height: 1.3em;
+        vertical-align: middle;
+        overflow: hidden;
+}
+
+@mixin absCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
