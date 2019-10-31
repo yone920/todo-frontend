@@ -1,0 +1,54 @@
+.mobile-nav {
+    display: none;
+    grid-column: 7 / span 1 ;
+    grid-row: 1 / 2;
+    justify-self: right;
+    align-self: center;
+
+    @include respond(phone) {
+        display: block;
+        position: relative;
+
+        &__checkbox {
+            display: none;
+        }
+        &__button {
+            position: absolute;
+            background-color: $white;
+            border-radius: .5rem;
+            z-index: 1000;
+            height: 5.5rem;
+            width: 5.5rem;
+            top: -2.8rem;
+            right: 0;
+        }
+        &__background {
+            border-radius: .5rem;
+            position: relative;
+            height: 5rem;
+            width: 5rem;
+            top: -2.6rem;
+            right: .3rem;
+           
+            z-index: 900;
+            background-image: radial-gradient($secondary-color-light, $secondary-color);
+            // transform: scale(10);
+        }
+        &__nav {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+        &__list {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        &__item {
+    
+        }
+    }
+    
+}

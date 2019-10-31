@@ -12,31 +12,42 @@
 
     &:target {
         opacity: 1;
-        visibility: visible
+        visibility: visible;
     }
 
     &__close {
         .icon {
             @include svg-icons($black);
         }
+        grid-column: 4 / -1;
+        justify-self: right;
     }
 
     &__content {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(max-content, 13rem)) 1fr;
+
         @include absCenter;
         width: 50%;
         height: 30rem;
         background-color: $white;
         box-shadow: 0 2rem 4rem rgba($black, .2);
+    }
 
-        display: grid;
-        grid-template-column: 1fr repeat(2, minmax(4rem, min-content)) 1fr;
-
+    &__header {
+        grid-column: 2 / span 2;
+        align-self: center;
+        justify-self: center;
+        
+        h3 {
+            text-transform: uppercase;
+        }
     }
 
     &__create-category-box {
-        grid-column: col-start 3 / col-end 6;
-        align-self: center;
+        grid-column: 2 / span 2;
+        // align-self: center;
         justify-self: center;
-        // display: none;
+        width: 100%;
     }
 }

@@ -1,5 +1,8 @@
 $primary-color: #53A536;
+$primary-color-light: darken( $primary-color, 20% );
 $secondary-color: #6478BF;
+$secondary-color-light: lighten( $secondary-color, 15% );
+
 $black: #000;
 $white: #fff;
 $category-header-background-color-1: #E75B10;

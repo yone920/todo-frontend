@@ -5,16 +5,24 @@
     grid-template-rows: 10vh min-content min-content min-content 5vh;
     grid-row-gap: 3rem;
 
+    @include respond(phone) {
+    grid-template-columns: [ full-start ] minmax(1.8rem, 1fr) [center-start ] repeat(8, [col-start] minmax(min-content, 13rem) [ col-end ]) [center-end] minmax(1.8rem, 1fr) [ full-end ];
+    }
 
     &__create-category-button {
         grid-column: col-start 3 / col-end 6;
         background-color: $secondary-color;
         width: 70%;
         justify-self: center;
-        // align-self: center;
-        padding: 1rem;
+        padding: 1.5rem;
         text-align: center;
         margin: 3rem 0;
+        border-radius: .5rem;
+
+        @include respond(tab-port) {
+            grid-column: center-start / center-end;
+            width: 100%;
+        }
 
         // border-radius: 10%;
         .icon {
