@@ -132,43 +132,42 @@ const mapOverTodos = () => {
 
 
   return (
-    <div className="home" id="home-page">
-          <div className="header">
-            <div className="header__logo-box">
-              <img src="img/download.jpeg"></img>
-            </div>
-            <div className="header__menu">
-              <span>Login</span>
-              <span>SignUp</span>
-              <span>SignOut</span>
-            </div>
-            {/* <div className="mobile-nav">
-              <input type="checkbox" className="mobile-nav__checkbox" id="navi-toggle"></input>
-              <label htmlFor="navi-toggle" className="mobile-nav__button"></label>
-              <div className="mobile-nav__background">&nbsp;</div>
-              <nav className="mobile-nav__nav">
-                <ul className="mobile-nav__list">
-                  <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">Login</a></li>
-                  <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">SignUp</a></li>
-                  <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">Logout</a></li>
-                </ul>
-              </nav>
-            </div> */}
-          </div>  
-          <a href="#popup" className="home__create-category-button" onClick={handleClick}>
-            <svg className="icon icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
-            </svg>
-          </a>
-          <div className="categories">
-              {mapOverTodos()}
-          </div>
-          <footer id="footer">
-              <p>yonedesign</p>
-          </footer>
-          
-          {displayFormPopup()}
-          
+    
+      <div className="home" id="home-page">
+            <div className="header">
+              <div className="header__logo-box">
+                <img src="img/download.jpeg"></img>
+              </div>
+              <div className="header__menu">
+                <span>Login</span>
+                <span>SignUp</span>
+                <span>SignOut</span>
+              </div>
+              {/* <div className="mobile-nav">
+                <input type="checkbox" className="mobile-nav__checkbox" id="navi-toggle"></input>
+                <label htmlFor="navi-toggle" className="mobile-nav__button"></label>
+                <div className="mobile-nav__background">&nbsp;</div>
+                <nav className="mobile-nav__nav">
+                  <ul className="mobile-nav__list">
+                    <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">Login</a></li>
+                    <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">SignUp</a></li>
+                    <li className="mobile-nav__item"><a href="#" className="mobile-nav__link">Logout</a></li>
+                  </ul>
+                </nav>
+              </div> */}
+            </div>  
+            <a href="#popup" className="home__create-category-button" onClick={handleClick}>
+              <svg className="icon icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+              </svg>
+            </a>
+            <div className="categories">
+                {mapOverTodos()}
+            </div> 
+        <footer className="footer">
+            <p>@yonedesign</p>
+        </footer> 
+            {displayFormPopup()}
     </div>
   );
 }

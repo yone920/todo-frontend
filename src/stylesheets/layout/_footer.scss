@@ -1,3 +1,5 @@
-footer#footer {
-    grid-column: full-start / full-end;
+.footer {
+    grid-column: col-start 4 / col-end 5;
+    grid-row: 5 / -1;
+    justify-self: center;
 }
