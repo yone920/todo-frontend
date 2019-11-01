@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export default function TodoCategoryForm({ addCategory }) {
+export default function TodoCategoryForm({ addCategory, changePopup }) {
 
    const [value, setValue] = useState("");
 
@@ -10,6 +10,7 @@ export default function TodoCategoryForm({ addCategory }) {
         if (!value) return;
         addCategory({name: value});
         setValue('');
+        changePopup();
    }
 
 

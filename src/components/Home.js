@@ -7,6 +7,7 @@ const Home = () => {
 
 const [hasError, setErrors] = useState(false);
 const [ todos, setTodos ] = useState([]);
+const [popup, setPopup] = useState(false);
 
 useEffect(() => {
       fetch("https://todo-yone-backend.herokuapp.com/categories")
@@ -83,6 +84,39 @@ const deleteCategory = category => {
     })
 }
 
+const displayFormPopup = () => {
+  if (popup) {
+    return (
+            <div className="popup" id="popup">
+                  <div className="popup__content">
+                    <div className="popup__header">
+                      <h3>Create A Category</h3>
+                    </div>
+                    <a href="#home-page" className="popup__close" onClick={handleClickClose}>
+                      <svg viewBox="0 0 32 32" class="icon icon-clear" viewBox="0 0 32 32" aria-hidden="true">
+                            <path d="M7.004 23.087l7.08-7.081-7.07-7.071L8.929 7.02l7.067 7.069L23.084 7l1.912 1.913-7.089 7.093 7.075 7.077-1.912 1.913-7.074-7.073L8.917 25z"/>
+                      </svg>
+                    </a>
+                    <div className="popup__create-category-box">
+                      <TodoCategoryForm  addCategory={addCategory} changePopup={changePopup}/>
+                    </div>
+                  </div>
+                </div>
+    )
+  }
+}
+
+const handleClick = e => {
+  setPopup(!popup);
+}
+
+const handleClickClose = e => {
+  setPopup(!popup);
+}
+
+const changePopup = () => {
+  setPopup(!popup);
+}
 
 const mapOverTodos = () => {
   if (todos.length > -1) {
@@ -121,7 +155,7 @@ const mapOverTodos = () => {
               </nav>
             </div> */}
           </div>  
-          <a href="#popup" className="home__create-category-button">
+          <a href="#popup" className="home__create-category-button" onClick={handleClick}>
             <svg className="icon icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
             </svg>
@@ -133,21 +167,8 @@ const mapOverTodos = () => {
               <p>yonedesign</p>
           </footer>
           
-          <div className="popup" id="popup">
-            <div className="popup__content">
-              <div className="popup__header">
-                <h3>Create A Category</h3>
-              </div>
-              <a href="#home-page" className="popup__close">
-                <svg viewBox="0 0 32 32" class="icon icon-clear" viewBox="0 0 32 32" aria-hidden="true">
-                      <path d="M7.004 23.087l7.08-7.081-7.07-7.071L8.929 7.02l7.067 7.069L23.084 7l1.912 1.913-7.089 7.093 7.075 7.077-1.912 1.913-7.074-7.073L8.917 25z"/>
-                </svg>
-              </a>
-              <div className="popup__create-category-box">
-                <TodoCategoryForm  addCategory={addCategory} />
-              </div>
-            </div>
-          </div>
+          {displayFormPopup()}
+          
     </div>
   );
 }
