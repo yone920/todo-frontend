@@ -29,28 +29,29 @@
   
   &__header {
     background-color: $category-header-background-color-1;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // justify-content: space-between;
     // align-content: center;
     align-items: center;
-    justify-items: center;
+    justify-items: right;
     // padding: .3rem;
     padding-left: 1rem;
     padding: 1.5rem 1.2rem;
     color: $white;
-    margin-bottom: 2rem;
+    
     border-radius: .5rem .5rem 0 0;
   }
 
   &__name {
     text-transform: uppercase;
+    justify-self: left;
   }
 
   &__svg {
-    .icon {
-      @include svg-icons($white);
-    }
-
+  
+    @include svg-icons-lrg($white);
+    grid-column: 3 / -1;
     .icon-chevron-bottom {
       // margin-right: 1rem;
     }
@@ -67,8 +68,12 @@
 
   &__delete {
     .icon {
-      @include svg-icons($black);
+      @include svg-icons-lrg($white);
+      &:hover {
+        @include svg-icons-lrg(darken($white, 20%));
+      }
     }
+    grid-column: 3 / -1;
   }
 
   &__new-form {

@@ -1,5 +1,10 @@
+.wrapper {
+    min-height: calc(100vh - 50px);
+}
 
 .home {
+   
+
     grid-row: 1 / 2;
     display: grid;
     min-height: 100%;

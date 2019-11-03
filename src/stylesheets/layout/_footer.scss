@@ -1,5 +1,6 @@
 .footer {
-    grid-column: col-start 4 / col-end 5;
-    grid-row: 5 / -1;
-    justify-self: center;
+    height: 50px;
+    text-align: center;
+    color: lighten( $black, 50%);
+    font-size: 1.3rem;
 }

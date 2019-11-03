@@ -8,6 +8,17 @@
         overflow: hidden;
 }
 
+@mixin svg-icons-lrg($color) {
+        display:inline-block;
+        fill: $color;
+        margin-top: -0.2em;
+        width: 1.8em;
+        height: 1.8em;
+        vertical-align: middle;
+        overflow: hidden;
+}
+
+
 
 
 @mixin absCenter {
