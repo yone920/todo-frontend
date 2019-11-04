@@ -122,11 +122,15 @@ const mapOverTodos = () => {
   if (todos.length > -1) {
     return (
            todos.map((todo, index) => (
-              <Category key={index} index={index} todo={todo} addTodo={addTodo} deleteTodo={deleteTodo} deleteCategory={deleteCategory} />
+              <Category key={index} index={index} todo={todo} addTodo={addTodo} deleteTodo={deleteTodo} deleteCategory={deleteCategory} markedOrNot={markedOrNot} />
           )) 
       
     )
   } 
+}
+
+const markedOrNot = (marked) => {
+  console.log(marked);
 }
 
 

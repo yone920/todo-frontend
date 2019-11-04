@@ -12,10 +12,13 @@
         &:nth-child(odd) {
             background-color: $light-grey-1;
           }
+        align-items: center;
+
          
     }
 
     &__icon-box {
+        align-self: center;
         .icon {
             @include svg-icons($black);
         }
@@ -34,6 +37,7 @@
 
     &__checked {
         text-decoration: line-through;
+        color: lighten($black, 70%);
     }
 }
 
