@@ -1,13 +1,18 @@
 .todo {
     display: grid;
-    grid-row-gap: 1rem;
+    // grid-row-gap: .3rem;
     padding: 2rem;
     margin-top: 2rem;
-
+    
     &__single-todo {
         display: grid;
         grid-template-columns: min-content minmax(2rem, max-content) 1fr;
         grid-column-gap: 1rem;
+        padding: .3rem;
+        &:nth-child(odd) {
+            background-color: $light-grey-1;
+          }
+         
     }
 
     &__icon-box {
@@ -17,12 +22,13 @@
     }
 
     &__name {
-        background-color: lighten( $black, 95%);
+        // background-color: lighten( $black, 95%);
         padding: 0 .3rem;
     }
 
     &__delete-button {
         justify-self: end;
+        align-self: center;
         @include svg-icons($black);
     }
 
