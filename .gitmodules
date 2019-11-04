@@ -1,0 +1,3 @@
+[submodule "Submod"]
+	url = https://github.com/yone920/todo-frontend.git
+	branch = Development
