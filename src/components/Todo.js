@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Todo({singleTodo, deleteTodo}) {
+export default function Todo({singleTodo, deleteTodo, markedOrNot}) {
 
     const [checked, setChecked] = useState(false)
 
@@ -10,13 +10,13 @@ export default function Todo({singleTodo, deleteTodo}) {
 
     const handleCheck = e => {
         setChecked(!checked);
+        markedOrNot(checked);
     }
     
     const markCheked = () => {
         if (checked) {
             return "todo__checked"
         }
-        
     }
     
     

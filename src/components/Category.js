@@ -2,14 +2,14 @@ import React, { Fragment, useState } from 'react'
 import TodoForm from './TodoForm'
 import Todo from './Todo'
 
-export default function Category({todo, index, addTodo, deleteTodo, deleteCategory}) {
+export default function Category({todo, index, addTodo, deleteTodo, deleteCategory, markedOrNot}) {
 
     const [display, setDisplay] = useState(true);
 
 
     const mapOverTodos = () => {
            return todo.todos.map((singleTodo) => {
-                return <Todo singleTodo={singleTodo} deleteTodo={deleteTodo} />
+                return <Todo singleTodo={singleTodo} deleteTodo={deleteTodo} markedOrNot={markedOrNot}/>
             }) 
     }
 

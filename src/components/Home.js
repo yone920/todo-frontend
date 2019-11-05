@@ -141,13 +141,14 @@ const markedOrNot = (marked) => {
         <div className="home" id="home-page">
               <div className="header">
                 <div className="header__logo-box">
-                  <img src="img/my-todo-logo.png"></img>
+                  
+                  <img src="img/my-todo-logo-2.png"></img>
                 </div>
-                <div className="header__menu">
+                {/* <div className="header__menu">
                   <span>Login</span>
                   <span>SignUp</span>
                   <span>SignOut</span>
-                </div>
+                </div> */}
                 {/* <div className="mobile-nav">
                   <input type="checkbox" className="mobile-nav__checkbox" id="navi-toggle"></input>
                   <label htmlFor="navi-toggle" className="mobile-nav__button"></label>

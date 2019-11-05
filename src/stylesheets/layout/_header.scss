@@ -1,5 +1,5 @@
 .header {
-    background-color: lighten( $black, 20% );
+    // background-color: lighten( $black, 20% );
     grid-column: full-start / full-end;
     color: $white;
 
@@ -8,23 +8,20 @@
     align-items: center;
     justify-items: center;
 
-    // &__logo-menu-wrapper {
-    //     grid-column: 2 / span 2;
-    //     width: 75%;
-    //     margin: 0 auto;
-        
-
-    // }
 
     &__logo-box {
         grid-column: 2 / span 2;
         justify-self: left;
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
 
+        @include respond(phone) {
+            grid-column: 4 / span 2;
+            justify-self: center;
+        }
 
         img {
-            width: 5rem;
+            width: 7rem;
         }
     }
 
