@@ -2,7 +2,8 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yone920.github.io/todo-frontend",
+  "homepage": "",
+  // "homepage": "https://yone920.github.io/todo-frontend",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
