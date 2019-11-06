@@ -46,6 +46,7 @@
   &__name {
     text-transform: uppercase;
     justify-self: left;
+    grid-column: 1 / span 2;
   }
 
   &__svg {

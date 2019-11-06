@@ -9,6 +9,13 @@ const [hasError, setErrors] = useState(false);
 const [ todos, setTodos ] = useState([]);
 const [popup, setPopup] = useState(false);
 
+
+var http = require("http");
+setInterval(function() {
+    http.get("https://todo-yone-backend.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
+
+
 useEffect(() => {
       fetch("https://todo-yone-backend.herokuapp.com/categories")
         .then( res =>  res.json())
