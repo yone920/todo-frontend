@@ -12,12 +12,12 @@ const [popup, setPopup] = useState(false);
 
 var http = require("http");
 setInterval(function() {
-    http.get("https://todo-yone-backend.herokuapp.com/");
+    http.get("http://localhost:3000/");
 }, 300000); // every 5 minutes (300000)
 
 
 useEffect(() => {
-      fetch("https://todo-yone-backend.herokuapp.com/categories")
+      fetch("http://localhost:3000/categories")
         .then( res =>  res.json())
         .then(data => {
             setTodos(data)
@@ -35,7 +35,7 @@ const addCategory = name => {
       },
       body: JSON.stringify(name)
     }
-    fetch("https://todo-yone-backend.herokuapp.com/categories", config)
+    fetch("http://localhost:3000/categories", config)
       .then(rsp => rsp.json())
       .then(data => {
         
@@ -52,7 +52,7 @@ const addTodo = data => {
     },
     body: JSON.stringify(data)
   }
-  fetch("https://todo-yone-backend.herokuapp.com/todos", config)
+  fetch("http://localhost:3000/todos", config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -68,7 +68,7 @@ const deleteTodo = todo => {
     }
   }
 
-  fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo}`, config)
+  fetch(`http://localhost:3000/todos/${todo}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -84,11 +84,32 @@ const deleteCategory = category => {
     }
   }
 
-  fetch(`https://todo-yone-backend.herokuapp.com/categories/${category}`, config)
+  fetch(`http://localhost:3000/categories/${category}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
     })
+}
+
+const markedOrNot = (todo) => {
+  console.log(todo);
+  let config = {
+    method: "PATCH",
+    headers: {
+    'Content-Type':'application/json',
+    'Accept':'application/json'
+    },
+    body: JSON.stringify({completed: !todo.completed })
+}
+
+fetch(`http://localhost:3000/todos/${todo.id}`, config)
+.then(rsp => rsp.json())
+.then(data => {
+    console.log(data);
+    
+    setTodos(data)
+}) 
+
 }
 
 const displayFormPopup = () => {
@@ -100,7 +121,7 @@ const displayFormPopup = () => {
                       <h3>Create A Category</h3>
                     </div>
                     <a href="#home-page" className="popup__close" onClick={handleClickClose}>
-                      <svg viewBox="0 0 32 32" class="icon icon-clear" viewBox="0 0 32 32" aria-hidden="true">
+                      <svg viewBox="0 0 32 32" className="icon icon-clear" viewBox="0 0 32 32" aria-hidden="true">
                             <path d="M7.004 23.087l7.08-7.081-7.07-7.071L8.929 7.02l7.067 7.069L23.084 7l1.912 1.913-7.089 7.093 7.075 7.077-1.912 1.913-7.074-7.073L8.917 25z"/>
                       </svg>
                     </a>
@@ -136,9 +157,7 @@ const mapOverTodos = () => {
   } 
 }
 
-const markedOrNot = (marked) => {
-  console.log(marked);
-}
+
 
 
 
