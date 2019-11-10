@@ -11,7 +11,7 @@ export default function Todo({singleTodo, deleteTodo, markedOrNot}) {
     
     const handleCheck = e => {
         setChecked(!checked);
-        markedOrNot(singleTodo);
+        // markedOrNot(singleTodo);
     }
     
     const markCheked = () => {

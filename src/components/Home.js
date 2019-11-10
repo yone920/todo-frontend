@@ -91,26 +91,26 @@ const deleteCategory = category => {
     })
 }
 
-const markedOrNot = (todo) => {
-  console.log(todo);
-  let config = {
-    method: "PATCH",
-    headers: {
-    'Content-Type':'application/json',
-    'Accept':'application/json'
-    },
-    body: JSON.stringify({completed: !todo.completed })
-}
+// const markedOrNot = (todo) => {
+//   console.log(todo);
+//   let config = {
+//     method: "PATCH",
+//     headers: {
+//     'Content-Type':'application/json',
+//     'Accept':'application/json'
+//     },
+//     body: JSON.stringify({completed: !todo.completed })
+// }
 
-fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo.id}`, config)
-.then(rsp => rsp.json())
-.then(data => {
-    console.log(data);
+// fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo.id}`, config)
+// .then(rsp => rsp.json())
+// .then(data => {
+//     console.log(data);
     
-    setTodos(data)
-}) 
+//     setTodos(data)
+// }) 
 
-}
+// }
 
 const displayFormPopup = () => {
   if (popup) {
