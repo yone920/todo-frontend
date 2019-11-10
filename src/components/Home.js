@@ -12,12 +12,12 @@ const [popup, setPopup] = useState(false);
 
 var http = require("http");
 setInterval(function() {
-    http.get("http://localhost:3000/");
+    http.get("https://todo-yone-backend.herokuapp.com/");
 }, 300000); // every 5 minutes (300000)
 
 
 useEffect(() => {
-      fetch("http://localhost:3000/categories")
+      fetch("https://todo-yone-backend.herokuapp.com/categories")
         .then( res =>  res.json())
         .then(data => {
             setTodos(data)
@@ -35,7 +35,7 @@ const addCategory = name => {
       },
       body: JSON.stringify(name)
     }
-    fetch("http://localhost:3000/categories", config)
+    fetch("https://todo-yone-backend.herokuapp.com/categories", config)
       .then(rsp => rsp.json())
       .then(data => {
         
@@ -52,7 +52,7 @@ const addTodo = data => {
     },
     body: JSON.stringify(data)
   }
-  fetch("http://localhost:3000/todos", config)
+  fetch("https://todo-yone-backend.herokuapp.com/todos", config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -68,7 +68,7 @@ const deleteTodo = todo => {
     }
   }
 
-  fetch(`http://localhost:3000/todos/${todo}`, config)
+  fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -84,7 +84,7 @@ const deleteCategory = category => {
     }
   }
 
-  fetch(`http://localhost:3000/categories/${category}`, config)
+  fetch(`https://todo-yone-backend.herokuapp.com/categories/${category}`, config)
     .then(rsp => rsp.json())
     .then(data => {
        setTodos(data)
@@ -102,7 +102,7 @@ const markedOrNot = (todo) => {
     body: JSON.stringify({completed: !todo.completed })
 }
 
-fetch(`http://localhost:3000/todos/${todo.id}`, config)
+fetch(`https://todo-yone-backend.herokuapp.com/todos/${todo.id}`, config)
 .then(rsp => rsp.json())
 .then(data => {
     console.log(data);

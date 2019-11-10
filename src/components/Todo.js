@@ -15,7 +15,7 @@ export default function Todo({singleTodo, deleteTodo, markedOrNot}) {
     }
     
     const markCheked = () => {
-        if (singleTodo.completed) {
+        if (checked) {
             return "todo__checked"
         }
 
