@@ -13,7 +13,7 @@ const [popup, setPopup] = useState(false);
 var http = require("http");
 setInterval(function() {
     http.get("https://todo-yone-backend.herokuapp.com/");
-}, 300000); // every 5 minutes (300000)
+}, 3000); // every 5 minutes (300000)
 
 
 useEffect(() => {
@@ -39,7 +39,7 @@ const addCategory = name => {
       .then(rsp => rsp.json())
       .then(data => {
         
-         setTodos(data)
+        setTodos(data)
       })
 }
 
@@ -150,7 +150,7 @@ const mapOverTodos = () => {
   if (todos.length > -1) {
     return (
            todos.map((todo, index) => (
-              <Category key={index} index={index} todo={todo} addTodo={addTodo} deleteTodo={deleteTodo} deleteCategory={deleteCategory} markedOrNot={markedOrNot} />
+              <Category key={index} index={index} todo={todo} addTodo={addTodo} deleteTodo={deleteTodo} deleteCategory={deleteCategory} />
           )) 
       
     )
