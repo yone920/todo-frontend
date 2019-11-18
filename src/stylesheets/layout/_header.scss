@@ -1,5 +1,4 @@
 .header {
-    // background-color: lighten( $black, 20% );
     grid-column: full-start / full-end;
     color: $white;
 
@@ -13,7 +12,6 @@
         grid-column: 2 / span 2;
         justify-self: left;
         display: flex;
-        // flex-direction: column;
 
         @include respond(phone) {
             grid-column: 4 / span 2;
@@ -49,9 +47,7 @@
         grid-column: 5 / span 3;
         justify-self: right;
         align-self: center;
-        // transform: translateY(-130px);
-        // transform: translateX(-30px);
-    
+ 
         span {
             padding-left: 20px;
         }
