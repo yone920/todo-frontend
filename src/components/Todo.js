@@ -18,7 +18,6 @@ export default function Todo({singleTodo, deleteTodo}) {
         if (checked) {
             return "todo__checked"
         }
-
     }
     
     
