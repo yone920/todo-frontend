@@ -7,7 +7,6 @@
     align-items: center;
     justify-items: center;
 
-
     &__logo-box {
         grid-column: 2 / span 2;
         justify-self: left;
@@ -20,6 +19,7 @@
 
         img {
             width: 7rem;
+            height: 100%;
         }
     }
 

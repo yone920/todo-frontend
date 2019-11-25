@@ -162,7 +162,6 @@ const mapOverTodos = () => {
         <div className="home" id="home-page">
               <div className="header">
                 <div className="header__logo-box">
-                  
                   <img src="img/my-todo-logo-2.png"></img>
                 </div>
                 {/* <div className="header__menu">
